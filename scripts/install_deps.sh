@@ -174,8 +174,8 @@ Linux)
 # It would be good to add armel, armhf and arm64.
 # See https://github.com/ethereum/webthree-umbrella/issues/228.
 #------------------------------------------------------------------------------
-        Ubuntu|"Linux Mint")
-            echo "Installing cpp-ethereum dependencies on Ubuntu."
+        Ubuntu|Kali*|"Linux Mint")
+            echo "Installing cpp-ethereum dependencies on $DISTRO_NAME."
             $SUDO apt-get -q update
             $SUDO apt-get install -qy --no-install-recommends --allow-unauthenticated \
                 build-essential \
