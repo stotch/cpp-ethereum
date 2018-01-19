@@ -143,8 +143,8 @@ Linux)
         DISTRO_NAME=$(. /etc/os-release; echo $NAME)
         case $DISTRO_NAME in
 
-        Debian*)
-            echo "Installing cpp-ethereum dependencies on Debian Linux."
+        Debian*|Kali*)
+            echo "Installing cpp-ethereum dependencies on $DISTRO_NAME."
 
             $SUDO apt-get -q update
             $SUDO apt-get -qy install \
@@ -174,7 +174,7 @@ Linux)
 # It would be good to add armel, armhf and arm64.
 # See https://github.com/ethereum/webthree-umbrella/issues/228.
 #------------------------------------------------------------------------------
-        Ubuntu|Kali*|"Linux Mint")
+        Ubuntu|"Linux Mint")
             echo "Installing cpp-ethereum dependencies on $DISTRO_NAME."
             $SUDO apt-get -q update
             $SUDO apt-get install -qy --no-install-recommends --allow-unauthenticated \
